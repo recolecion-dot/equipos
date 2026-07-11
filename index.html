@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech – Reciclaje Electrónico Profesional</title>
+    <meta name="description" content="Empresa especializada en la gestión de residuos electrónicos, reciclaje y borrado seguro de datos para empresas.">
+    <meta name="keywords" content="Reciclaje electrónico, gestión de residuos, destrucción segura de datos, reutilización de equipos">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♻️</text></svg>">
+
+    <!-- Google Fonts (precarga + carga optimizada) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (versión estable) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Bootstrap 5 (CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* ======================================================
+                   VARIABLES GLOBALES
+                ====================================================== */
+        :root {
+            --verde-oscuro: #1e4d2b;
+            --verde-medio: #2e7d32;
+            --verde-claro: #4caf50;
+            --gris-claro: #f4f7f6;
+            --texto-oscuro: #263238;
+            --blanco: #ffffff;
+            --negro-suave: rgba(0, 0, 0, 0.7);
+            --sombra-suave: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --sombra-media: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --radio-borde: 20px;
+            --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ======================================================
+                   RESET Y BASE
+                ====================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transicion);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ======================================================
+                   BOTONES GLOBALES
+                ====================================================== */
+        .btn-primary-custom {
+            background-color: var(--verde-medio);
+            color: var(--blanco);
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transicion);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary-custom:hover {
+            background-color: var(--verde-oscuro);
+            transform: scale(1.04);
+            color: var(--blanco);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35);
+        }
+
+        .btn-outline-light-custom {
+            border: 2px solid var(--blanco);
+            color: var(--blanco);
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transicion);
+            text-decoration: none;
+            display: inline-block;
+            background: transparent;
+        }
+        .btn-outline-light-custom:hover {
+            background: var(--blanco);
+            color: var(--verde-oscuro);
+            transform: scale(1.04);
+        }
+
+        /* ======================================================
+                   NAVBAR
+                ====================================================== */
+        .navbar {
+            background-color: var(--verde-oscuro) !important;
+            padding: 12px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-brand .logo img {
+            height: 44px;
+            width: auto;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .navbar-brand h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand h2 i {
+            margin-right: 8px;
+            color: var(--verde-claro);
+        }
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: var(--transicion);
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--blanco) !important;
+        }
+
+        /* ======================================================
+                   HERO
+                ====================================================== */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://drive.google.com/uc?export=download&id=1dJMqHX7tZBkV3l0QBjiiFCkr9KYYmBFJ');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 60px 0;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .hero-section .lead {
+            font-weight: 300;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .cobertura {
+            background: var(--verde-claro);
+            color: var(--blanco);
+            padding: 10px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .cobertura i {
+            margin-right: 10px;
+        }
+
+        /* ======================================================
+                   SECCIONES COMUNES
+                ====================================================== */
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--verde-oscuro);
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .bg-light-custom {
+            background-color: var(--gris-claro);
+        }
+
+        /* ======================================================
+                   TARJETAS DE SERVICIOS
+                ====================================================== */
+        .service-card {
+            background: var(--blanco);
+            border-radius: var(--radio-borde);
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            border: 3px solid var(--verde-claro);
+            transition: var(--transicion);
+        }
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        .service-card h4 {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--verde-oscuro);
+        }
+        .service-card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ======================================================
+                   PASOS DEL PROCESO
+                ====================================================== */
+        .step-card {
+            background: var(--blanco);
+            border-radius: var(--radio-borde);
+            padding: 30px 20px 25px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            border: none;
+        }
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            color: var(--blanco);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: var(--transicion);
+        }
+        .step-card:hover .step-icon {
+            transform: scale(1.08) rotate(-3deg);
+        }
+        .step-1 .step-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .step-2 .step-icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .step-3 .step-icon {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .step-4 .step-icon {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .step-number-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.06);
+            color: #999;
+            font-size: 0.85rem;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .step-card h5 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--texto-oscuro);
+        }
+        .step-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ======================================================
+                   BENEFICIOS
+                ====================================================== */
+        .benefit-item i {
+            color: var(--verde-medio);
+            font-size: 1.4rem;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .list-unstyled li {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .list-unstyled li strong {
+            display: inline-block;
+        }
+
+        /* ======================================================
+                   GALERÍA
+                ====================================================== */
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: var(--transicion);
+            border: 3px solid var(--verde-claro);
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ======================================================
+                   TESTIMONIOS
+                ====================================================== */
+        .testimonial-card {
+            background: var(--blanco);
+            border-radius: var(--radio-borde);
+            padding: 28px 24px;
+            box-shadow: var(--sombra-suave);
+            height: 100%;
+            transition: var(--transicion);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+        .testimonial-card .d-flex img {
+            border: 3px solid var(--verde-claro);
+        }
+
+        /* ======================================================
+                   FORMULARIO DE CONTACTO
+                ====================================================== */
+        .form-control {
+            border-radius: 30px;
+            padding: 14px 20px;
+            border: 1px solid #ddd;
+            transition: var(--transicion);
+            font-size: 0.95rem;
+        }
+        .form-control:focus {
+            border-color: var(--verde-medio);
+            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
+        }
+        .form-success {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 18px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            font-weight: 500;
+        }
+        .form-success.show {
+            display: block;
+        }
+
+        .contacto-equipo {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin-top: 24px;
+            border-left: 5px solid var(--verde-medio);
+        }
+        .contacto-equipo h5 {
+            color: var(--verde-oscuro);
+            font-weight: 700;
+        }
+        .contacto-equipo a {
+            color: var(--verde-medio);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contacto-equipo a:hover {
+            text-decoration: underline;
+        }
+
+        /* ======================================================
+                   VIDEO
+                ====================================================== */
+        .video-section {
+            background-color: var(--gris-claro);
+            padding: 80px 0;
+        }
+        .video-wrapper {
+            position: relative;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .play-button-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(46, 125, 50, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicion);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+        }
+        .play-button:hover {
+            background: var(--verde-medio);
+            transform: scale(1.1);
+        }
+        .play-button i {
+            color: var(--blanco);
+            font-size: 30px;
+            margin-left: 6px;
+        }
+        .video-error {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--blanco);
+            z-index: 3;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 16px;
+        }
+        .video-error.show {
+            display: flex;
+        }
+        .video-error a {
+            color: var(--verde-claro);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* ======================================================
+                   FOOTER
+                ====================================================== */
+        footer {
+            background-color: var(--verde-oscuro);
+            color: var(--blanco);
+            padding: 50px 0 20px;
+        }
+        footer h4 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+        }
+        footer a:hover {
+            color: var(--verde-claro);
+            text-decoration: underline;
+        }
+        .social-icon {
+            color: var(--blanco);
+            font-size: 1.6rem;
+            margin-right: 18px;
+            transition: var(--transicion);
+            display: inline-block;
+        }
+        .social-icon:hover {
+            color: var(--verde-claro);
+            transform: scale(1.2);
+        }
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.15);
+            margin: 30px 0;
+        }
+
+        /* ======================================================
+                   BOTÓN CONFETI
+                ====================================================== */
+        .confetti-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            background: var(--verde-medio);
+            color: var(--blanco);
+            border: none;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicion);
+        }
+        .confetti-btn:hover {
+            background: var(--verde-oscuro);
+            transform: scale(1.08) rotate(10deg);
+        }
+
+        /* ======================================================
+                   MODAL DE REDIRECCIÓN
+                ====================================================== */
+        .redirect-modal {
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transicion);
+            backdrop-filter: blur(6px);
+        }
+        .redirect-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .redirect-content {
+            background: var(--blanco);
+            padding: 32px 28px;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+        .redirect-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        .redirect-btn {
+            padding: 10px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transicion);
+            border: none;
+        }
+        .redirect-btn-primary {
+            background: var(--verde-medio);
+            color: var(--blanco);
+        }
+        .redirect-btn-primary:hover {
+            background: var(--verde-oscuro);
+            transform: scale(1.03);
+        }
+        .redirect-btn-secondary {
+            background: transparent;
+            color: var(--verde-medio);
+            border: 2px solid var(--verde-medio);
+        }
+        .redirect-btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        /* ======================================================
+                   RESPONSIVE AJUSTES
+                ====================================================== */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            .hero-section .lead {
+                font-size: 1rem;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .navbar-brand h2 {
+                font-size: 1.3rem;
+            }
+            .navbar-brand .logo img {
+                height: 36px;
+            }
+            .confetti-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .play-button {
+                width: 64px;
+                height: 64px;
+            }
+            .play-button i {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 60vh;
+            }
+            .btn-primary-custom,
+            .btn-outline-light-custom {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="#" aria-label="EcoTech - Inicio">
+                <span class="logo">
+                    <img src="https://i.ibb.co/8DKPTKds/imagen1.png" alt="Logo EcoTech" width="44" height="44">
+                </span>
+                <h2><i class="fas fa-recycle" aria-hidden="true"></i>EcoTech</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+MAIN CONTENT
+============================================================ -->
+<main>
+
+    <!-- HERO -->
+    <header class="hero-section" id="inicio">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Reciclaje Electrónico Profesional</h1>
+            <p class="lead">Gestionamos tus equipos en desuso, borramos datos de forma segura y damos una segunda vida a los componentes.</p>
+            <div class="mb-4">
+                <span class="cobertura"><i class="fas fa-map-pin" aria-hidden="true"></i> Servicio en CDMX y área metropolitana</span>
+            </div>
+            <div>
+                <a href="#contacto" class="btn btn-primary-custom btn-lg me-3">Solicitar información</a>
+                <a href="#servicios" class="btn btn-outline-light-custom btn-lg">Conocer más</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones integrales para la gestión sostenible de residuos electrónicos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="service-card">
+                        <img src="https://i.ibb.co/7dJRZjPv/Log-stica-de-Recogida.png" alt="Logística de recogida" loading="lazy">
+                        <h4>Logística de Recogida</h4>
+                        <p>Nos desplazamos a tus instalaciones para recoger todos los equipos electrónicos que ya no utilices.</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="service-card">
+                        <img src="https://i.ibb.co/60QnYkRF/Borrado-seguro.png" alt="Borrado seguro de datos" loading="lazy">
+                        <h4>Borrado Seguro de Datos</h4>
+                        <p>Aplicamos métodos de sobrescritura</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="service-card">
+                        <img src="https://i.ibb.co/ZRDYsmR3/Reciclaje-y-reutilizaci-n.png" alt="Reciclaje y reutilización" loading="lazy">
+                        <h4>Reciclaje y Reutilización</h4>
+                        <p>Separamos componentes reutilizables para donación y reciclamos materiales de forma responsable con el medio ambiente.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>¿Cómo Trabajamos?</h2>
+                <p>Cuatro pasos para darle una nueva vida a tus equipos electrónicos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card step-1">
+                        <div class="step-number-badge">1</div>
+                        <div class="step-icon"><i class="fas fa-truck"></i></div>
+                        <h5>recolección</h5>
+                        <p>Agendamos la visita y retiramos todos los equipos de tus oficinas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card step-2">
+                        <div class="step-number-badge">2</div>
+                        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h5>Borrado de Datos</h5>
+                        <p>Aplicamos métodos certificados (DOD, sobrescritura) o destrucción física de discos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card step-3">
+                        <div class="step-number-badge">3</div>
+                        <div class="step-icon"><i class="fas fa-recycle"></i></div>
+                        <h5>Clasificación</h5>
+                        <p>Separamos lo que puede reutilizarse (donación) de lo que va a reciclaje de materiales.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card step-4">
+                        <div class="step-number-badge">4</div>
+                        <div class="step-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h5>Disposición Final</h5>
+                        <p>Los componentes útiles se donan, el resto se recicla con proveedores autorizados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold">Beneficios para tu Empresa</h2>
+                    <ul class="list-unstyled mt-4">
+                        <li><i class="fas fa-check-circle benefit-item" aria-hidden="true"></i> <strong>Seguridad total:</strong> Eliminamos cualquier riesgo de filtración de datos.</li>
+                        <li><i class="fas fa-check-circle benefit-item" aria-hidden="true"></i> <strong>Cumplimiento legal:</strong> Te entregamos certificados de destrucción y reciclaje.</li>
+                        <li><i class="fas fa-check-circle benefit-item" aria-hidden="true"></i> <strong>Responsabilidad ambiental:</strong> Reducimos la huella ecológica de tus residuos.</li>
+                        <li><i class="fas fa-check-circle benefit-item" aria-hidden="true"></i> <strong>Valor social:</strong> Donamos equipos reutilizables a instituciones que lo necesitan.</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary-custom mt-3">Solicita una cotización</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://i.ibb.co/JRjx7K8V/Reciclaje-electr-nico.png" alt="Reciclaje electrónico" class="img-fluid rounded" loading="lazy" style="max-height:400px; object-fit:contain;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Nuestro Trabajo</h2>
+                <p>Imágenes de nuestros procesos de recogida, borrado y reciclaje</p>
+            </div>
+            <div class="row g-4 gallery">
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/7dJRZjPv/Log-stica-de-Recogida.png" alt="Logística de recogida" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/NdYG7jD7/Discos-duros.png" alt="Discos duros" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/0ysyd0wS/Reciclaje-de-componentes.png" alt="Reciclaje de componentes" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/VWpv5xS8/hardware-en-desuso.png" alt="Hardware en desuso" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/qY6yBvMp/Borrado-seguro.png" alt="Borrado seguro" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://i.ibb.co/7tCxT2hY/componentes-electronicos.png" alt="Componentes electrónicos" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">El Proceso de Reciclaje Electrónico</h2>
+                <p class="lead text-muted">Descubre cómo transformamos los residuos en recursos</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="video-wrapper">
+                        <div class="video-container" id="youtubeVideoContainer">
+                            <img src="https://img.youtube.com/vi/T16qtsgCqLY/maxresdefault.jpg"
+                            alt="Miniatura del video" class="video-thumbnail" id="videoThumbnail">
+                            <div class="play-button-container" id="playButton">
+                                <div class="play-button" aria-label="Reproducir video">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="video-error" id="videoError">
+                                <p><i class="fas fa-exclamation-triangle" style="font-size:3rem; color:#ffc107;"></i></p>
+                                <p>No se pudo cargar el video. <br>
+                                <a href="https://www.youtube.com/watch?v=T16qtsgCqLY" target="_blank" rel="noopener noreferrer">Ver en YouTube</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Lo que dicen nuestros clientes</h2>
+                <p class="lead text-muted">Empresas que confían en nosotros para la gestión de sus residuos electrónicos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Laura Fernández" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Laura Fernández</h5>
+                                <small class="text-muted">Directora de TI</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"EcoTech nos dio la tranquilidad de saber que nuestros datos quedaron completamente destruidos. Su servicio es rápido y profesional."</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo Méndez" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Ricardo Méndez</h5>
+                                <small class="text-muted">Gerente de Operaciones</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Reciclamos más de 200 equipos con ellos. El proceso fue muy claro y nos entregaron certificados de destrucción."</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Patricia Gómez" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Patricia Gómez</h5>
+                                <small class="text-muted">Responsable de Sustentabilidad</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Nos ayudaron a cumplir con nuestras metas de cero residuos. Además, nos compartieron el impacto ambiental positivo."</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Solicita una cotización</h2>
+                    <p class="lead mb-4">Cuéntanos cuántos equipos tienes y te daremos una solución personalizada con total transparencia.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="contacto-equipo">
+                        <h5><i class="fas fa-users me-2" aria-hidden="true"></i>Nuestro equipo</h5>
+                        <p><i class="fas fa-map-pin me-2" aria-hidden="true"></i> Servicio en CDMX y área metropolitana</p>
+                        <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> <a href="https://wa.me/5217297553441" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                        <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> <a href="https://wa.me/5215542839148" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form action="https://formsubmit.co/poga467@gmail.com" method="POST" id="contactForm" novalidate>
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde EcoTech">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="#exito">
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required aria-label="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="email" placeholder="Tu email" required aria-label="Correo electrónico">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="empresa" placeholder="Empresa" required aria-label="Empresa">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="mensaje" rows="3" placeholder="Descripción de los equipos y cantidad" required aria-label="Mensaje"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100" id="submitBtn">
+                            <span id="btnText">Enviar solicitud</span>
+                            <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="form-success">
+                        <i class="fas fa-check-circle me-2" aria-hidden="true"></i> ¡Tu solicitud se envió correctamente! Nos pondremos en contacto contigo pronto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================================================
+FOOTER
+============================================================ -->
+<footer>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h4><i class="fas fa-recycle me-2" aria-hidden="true"></i>EcoTech</h4>
+                <p>Transformamos residuos electrónicos en recursos, garantizando la seguridad de tus datos y el cuidado del medio ambiente.</p>
+                <p><i class="fas fa-map-pin me-2" aria-hidden="true"></i> CDMX y área metropolitana</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none">Inicio</a></li>
+                    <li class="mb-2"><a href="#servicios" class="text-white text-decoration-none">Servicios</a></li>
+                    <li class="mb-2"><a href="#proceso" class="text-white text-decoration-none">Proceso</a></li>
+                    <li class="mb-2"><a href="#galeria" class="text-white text-decoration-none">Galería</a></li>
+                    <li><a href="#contacto" class="text-white text-decoration-none">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Contacto</h4>
+                <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> <a href="https://wa.me/5217297553441" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">WhatsApp</a></p>
+                <p><i class="fab fa-whatsapp me-2" aria-hidden="true"></i> <a href="https://wa.me/5215542839148" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">WhatsApp</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 EcoTech. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+BOTÓN DE CONFETI
+============================================================ -->
+<button class="confetti-btn" id="confettiBtn" aria-label="¡Celebra con confeti!">
+    <i class="fas fa-recycle" aria-hidden="true"></i>
+</button>
+
+<!-- ============================================================
+MODAL DE REDIRECCIÓN
+============================================================ -->
+<div class="redirect-modal" id="redirectModal" role="dialog" aria-modal="true">
+    <div class="redirect-content">
+        <h3 class="mb-4">Estás saliendo de nuestro sitio</h3>
+        <p>Estás a punto de visitar un sitio web externo. ¿Deseas continuar?</p>
+        <div class="redirect-buttons">
+            <button class="redirect-btn redirect-btn-primary" id="confirmRedirect">Continuar</button>
+            <button class="redirect-btn redirect-btn-secondary" id="cancelRedirect">Cancelar</button>
+        </div>
+        <div class="mt-4">
+            <label class="d-flex align-items-center justify-content-center">
+                <input type="checkbox" id="rememberChoice" class="me-2">
+                <span>Recordar mi elección</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+SCRIPTS
+============================================================ -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" defer></script>
+
+<script>
+    (function() {
+        'use strict';
+
+        // ===== CONFETTI =====
+        function launchConfetti() {
+            const colors = ['#1e4d2b', '#2e7d32', '#4caf50', '#a5d6a7', '#c8e6c9'];
+            confetti({
+                particleCount: 150,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors
+            });
+            confetti({
+                particleCount: 150,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors
+            });
+            setTimeout(() => {
+                confetti({
+                    particleCount: 50,
+                    spread: 100,
+                    origin: { y: 0.6 }
+                });
+            }, 250);
+        }
+
+        document.getElementById('confettiBtn').addEventListener('click', launchConfetti);
+        window.addEventListener('load', function() {
+            setTimeout(launchConfetti, 1000);
+        });
+
+        // ===== VIDEO =====
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('youtubeVideoContainer');
+        const videoError = document.getElementById('videoError');
+        const videoId = 'T16qtsgCqLY';
+
+        playButton.addEventListener('click', function() {
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId +
+                '?autoplay=1&rel=0&enablejsapi=1');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow',
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+
+            videoContainer.innerHTML = '';
+            videoContainer.appendChild(iframe);
+            videoError.classList.remove('show');
+            launchConfetti();
+        });
+
+        videoError.addEventListener('click', function(e) {
+            if (e.target.tagName !== 'A') {
+                window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');
+            }
+        });
+
+        // ===== FORMULARIO =====
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const successMsg = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', function(e) {
+            // Mostrar spinner y deshabilitar botón
+            submitBtn.disabled = true;
+            btnText.textContent = 'Enviando...';
+            btnSpinner.classList.remove('d-none');
+
+            // El formulario se envía normalmente; el mensaje de éxito se muestra al recargar con #exito
+            // Pero podemos mostrar un mensaje provisional si se queda en la página
+        });
+
+        // Si la URL contiene #exito, mostrar mensaje de éxito
+        if (window.location.hash === '#exito') {
+            successMsg.classList.add('show');
+            setTimeout(() => {
+                window.location.hash = '';
+            }, 100);
+            // Restaurar botón (por si acaso)
+            submitBtn.disabled = false;
+            btnText.textContent = 'Enviar solicitud';
+            btnSpinner.classList.add('d-none');
+        }
+
+        // ===== MODAL DE REDIRECCIÓN =====
+        const redirectModal = document.getElementById('redirectModal');
+        const confirmRedirect = document.getElementById('confirmRedirect');
+        const cancelRedirect = document.getElementById('cancelRedirect');
+        const rememberChoice = document.getElementById('rememberChoice');
+
+        let targetUrl = '';
+        let remember = localStorage.getItem('rememberRedirectChoice') === 'true';
+        if (remember) rememberChoice.checked = true;
+
+        // Detectar enlaces externos (data-external-link)
+        document.querySelectorAll('[data-external-link]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (remember && localStorage.getItem('autoRedirect') === 'true') return;
+                e.preventDefault();
+                targetUrl = this.getAttribute('data-external-link');
+                redirectModal.classList.add('show');
+            });
+        });
+
+        confirmRedirect.addEventListener('click', function() {
+            if (rememberChoice.checked) {
+                localStorage.setItem('rememberRedirectChoice', 'true');
+                localStorage.setItem('autoRedirect', 'true');
+            }
+            redirectModal.classList.remove('show');
+            window.open(targetUrl, '_blank');
+        });
+
+        cancelRedirect.addEventListener('click', function() {
+            if (rememberChoice.checked) {
+                localStorage.setItem('rememberRedirectChoice', 'true');
+                localStorage.setItem('autoRedirect', 'false');
+            }
+            redirectModal.classList.remove('show');
+        });
+
+        redirectModal.addEventListener('click', function(e) {
+            if (e.target === redirectModal) redirectModal.classList.remove('show');
+        });
+
+        // (Opcional) Los enlaces de WhatsApp ya tienen target="_blank" y no usan el modal.
+        // Si se desea usar el modal para ellos, se podría añadir data-external-link, pero no es necesario.
+
+    })();
+</script>
+
+</body>
+</html>
